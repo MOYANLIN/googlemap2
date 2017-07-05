@@ -18,12 +18,12 @@ function initMap(){
 	});
 
 	$.ajax({
-		url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
+		url: '/nearby_search',
 		data: {
 			'location': position.lat +','+position.lng,
 			'type': 'restaurant',
 			'key':GOOGLE_API_KEY,
-			'radius': 500
+			'raadius': 500
 		},
 		success: function(data){
 			debugger;
