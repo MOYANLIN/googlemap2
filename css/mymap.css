@@ -16,9 +16,13 @@ html body #place-info-wrapper {
   position: absolute;
   top: 0;
   left: -408px;
+  display: none;
 }
 html body #place-info-wrapper.visible {
   left: 0;
+}
+html body #place-info-wrapper.is-active {
+  display: block;
 }
 html body #place-info-wrapper #hero-header-wrapper {
   width: 100%;
@@ -77,6 +81,7 @@ html body #place-info-wrapper .place-info-visibility-toggle .triangle-icon {
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
   border-right: 7px solid rgba(0, 0, 0, 0.7);
+  margin: 0 auto;
 }
 html body #place-info-wrapper .place-info-visibility-toggle .triangle-icon.left {
   border-right: 0;

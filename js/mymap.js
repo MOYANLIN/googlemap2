@@ -58,7 +58,6 @@ $(function(){
 				window.alert(status);
 			}
 		});
-
 		$('.place-info-visibility-toggle').on('click', function(){
 			$('#place-info-wrapper').toggleClass('visible');
 			$('#place-info-wrapper .triangle-icon').toggleClass('left');
@@ -75,6 +74,7 @@ $(function(){
 			$('.place-review-score').text(place['rating']);
 			$('.place-type').text(place['types'][0]);
 			$('#place-info-wrapper').addClass('visible');
+			$('#place-info-wrapper').addClass('is-active');
 		});
 	}
 	initMap();

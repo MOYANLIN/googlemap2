@@ -18,9 +18,14 @@ html {
       position: absolute;
       top: 0;
       left: -408px;
+      display: none;
 
       &.visible{
         left : 0;
+      }
+
+      &.is-active{
+        display: block;
       }
 
       #hero-header-wrapper {
@@ -87,6 +92,7 @@ html {
           border-top: @triangle-size solid transparent;
           border-bottom: @triangle-size solid transparent;
           border-right:@triangle-size solid rgba(0, 0, 0, 0.7);
+          margin : 0 auto;
 
           &.left {
             border-right: 0;
