@@ -15,14 +15,15 @@ html body #place-info-wrapper {
   background-color: #4285F4;
   position: absolute;
   top: 0;
-  left: -408px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-408px);
   display: none;
-}
-html body #place-info-wrapper.visible {
-  left: 0;
 }
 html body #place-info-wrapper.is-active {
   display: block;
+}
+html body #place-info-wrapper.visible {
+  transform: translateX(0);
 }
 html body #place-info-wrapper #hero-header-wrapper {
   width: 100%;

@@ -6,6 +6,9 @@ $(function(){
 	var DEFAULT_LAT = 43.642509;
 	var DEFAULT_LNG = -79.387039;
 
+	var current_infowindow;
+	var markers_shown;
+
 	function initMap(){
 
 		var map = new google.maps.Map($('#map')[0],{
@@ -41,6 +44,13 @@ $(function(){
 
 	function getNearByPlaces(map, params){
 
+		if(markers_shown){
+			_.each(markers_shown, function(marker){
+				marker.setMap(null);
+			});
+		}
+		markers_shown = [];
+
 		service = new google.maps.places.PlacesService(map);
 		service.nearbySearch(params, function(places, status){
 			if(status === google.maps.places.PlacesServiceStatus.OK){
@@ -72,6 +82,8 @@ $(function(){
 
 						showDetailInfo(place);
 					});
+
+					markers_shown.push(marker);
 				});
 			}else{
 				window.alert(status);
@@ -89,8 +101,10 @@ $(function(){
 			$('.place-name').text(place['name']);
 			$('.place-review-score').text(place['rating']);
 			$('.place-type').text(place['types'][0]);
-			$('#place-info-wrapper').addClass('visible');
 			$('#place-info-wrapper').addClass('is-active');
+			setTimeout(function(){
+				$('#place-info-wrapper').addClass('visible');
+			},100);
 		});
 	}
 	initMap();
