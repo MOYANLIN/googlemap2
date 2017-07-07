@@ -1,7 +1,6 @@
 html {
   height: 100%;
   width: 100%;
-  margin: 0;
 }
 html body {
   height: 100%;
@@ -16,8 +15,10 @@ html body #place-info-wrapper {
   background-color: #4285F4;
   position: absolute;
   top: 0;
+  left: -408px;
+}
+html body #place-info-wrapper.visible {
   left: 0;
-  display: none;
 }
 html body #place-info-wrapper #hero-header-wrapper {
   width: 100%;
@@ -55,4 +56,29 @@ html body #place-info-wrapper #place-basic-info-wrapper #place-basic-info .info-
 }
 html body #place-info-wrapper #place-basic-info-wrapper #place-basic-info .info-text.place-type {
   text-transform: capitalize;
+}
+html body #place-info-wrapper .place-info-visibility-toggle {
+  width: 23px;
+  height: 48px;
+  position: absolute;
+  right: -23px;
+  line-height: 48px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-left: 1px solid #D4D4D4;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+  top: 8px;
+}
+html body #place-info-wrapper .place-info-visibility-toggle .triangle-icon {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid rgba(0, 0, 0, 0.7);
+}
+html body #place-info-wrapper .place-info-visibility-toggle .triangle-icon.left {
+  border-right: 0;
+  border-left: 7px solid rgba(0, 0, 0, 0.7);
 }
